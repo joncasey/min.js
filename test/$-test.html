@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$ Test</title>
+  </head>
+  <body>
+
+    <h1>$ Test</h1>
+    <ul>
+      <li><a href="#a" class="odd">a</a></li>
+      <li><a href="#b">b</a></li>
+      <li><a href="#c" class="odd">c</a></li>
+      <li><a href="#d">d</a></li>
+      <li><a href="#e" class="odd">e</a></li>
+    </ul>
+
+    <script src="../src/$.js"></script>
+    <script>
+
+      document.on('foo', function(e) {
+        alert(e.type)
+      })
+
+      $('h1').on('click', function(e) {
+        this.trigger('foo')
+      })
+
+      document.on('click', 'a.odd', function(e) {
+        alert(e.type + ': '+ e.target.href)
+      })
+
+    </script>
+
+  </body>
+</html>
