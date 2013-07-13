@@ -46,7 +46,7 @@
 
   if (!matches) {
     node[matches = 'matches'] = function(selector) {
-      return Array.prototype.indexOf.call($(selector), this) > -1
+      return Array.prototype.some.call($(selector), this)
     }
   }
 
